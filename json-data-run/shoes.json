@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Running Shoes",
+    "brand": "Nike",
+    "price": 120,
+    "image": "https://5.imimg.com/data5/ANDROID/Default/2021/4/SU/BW/ZO/35945583/product-jpeg-500x500.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Casual Sneakers",
+    "brand": "Adidas",
+    "price": 80,
+    "image": "https://static.nike.com/a/images/f_auto/dpr_3.0,cs_srgb/w_300,c_limit/80742851-ed2d-4046-93a6-a06e723a526e/nike-just-do-it.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Formal Oxfords",
+    "brand": "Clarks",
+    "price": 150,
+    "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/231381b3-0087-4efa-ad6a-15ab497715ae/air-max-270-shoes-MJxJfF.png"
+  }
+]
