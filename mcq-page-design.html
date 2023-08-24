@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCQ Paper</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .question-container {
+        width: 60%;
+        margin: 0 auto;
+        padding: 20px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .question {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      .options {
+        list-style-type: none;
+        padding: 0;
+      }
+      .option {
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="question-container">
+      <div class="question">Q1: What is the capital of France?</div>
+      <ul class="options">
+        <li class="option">A. Paris</li>
+        <li class="option">B. London</li>
+        <li class="option">C. Rome</li>
+        <li class="option">D. Berlin</li>
+      </ul>
+      <button id="nextBtn">Next</button>
+    </div>
+    <div class="question-container">
+      <div class="question">Q1: What is the capital of France?</div>
+      <ul class="options">
+        <li class="option">A. Paris</li>
+        <li class="option">B. London</li>
+        <li class="option">C. Rome</li>
+        <li class="option">D. Berlin</li>
+      </ul>
+      <button id="nextBtn">Next</button>
+    </div>
+    <div class="question-container">
+      <div class="question">Q1: What is the capital of France?</div>
+      <ul class="options">
+        <li class="option">A. Paris</li>
+        <li class="option">B. London</li>
+        <li class="option">C. Rome</li>
+        <li class="option">D. Berlin</li>
+      </ul>
+      <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          question: "What is the capital of France?",
+          options: ["Paris", "London", "Rome", "Berlin"],
+          answer: "A",
+        },
+        // Add more questions here
+      ];
+
+      const questionContainer = document.querySelector(".question-container");
+      const questionElement = questionContainer.querySelector(".question");
+      const optionsList = questionContainer.querySelector(".options");
+      const nextButton = questionContainer.querySelector("#nextBtn");
+
+      let currentQuestionIndex = 0;
+
+      function loadQuestion(questionIndex) {
+        const currentQuestion = questions[questionIndex];
+        questionElement.textContent = currentQuestion.question;
+        optionsList.innerHTML = "";
+        currentQuestion.options.forEach((option, index) => {
+          const optionElement = document.createElement("li");
+          optionElement.classList.add("option");
+          optionElement.textContent = `${String.fromCharCode(
+            65 + index
+          )}. ${option}`;
+          optionsList.appendChild(optionElement);
+        });
+      }
+
+      function nextQuestion() {
+        if (currentQuestionIndex < questions.length - 1) {
+          currentQuestionIndex++;
+          loadQuestion(currentQuestionIndex);
+        } else {
+          alert("No more questions.");
+        }
+      }
+
+      nextButton.addEventListener("click", nextQuestion);
+
+      // Load the initial question
+      loadQuestion(currentQuestionIndex);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="rating">
+      <span class="star" data-rating="1"></span>
+      <span class="star" data-rating="2"></span>
+      <span class="star" data-rating="3"></span>
+      <span class="star" data-rating="4"></span>
+      <span class="star" data-rating="5"></span>
+    </div>
+  </body>
+
+  <style>
+    .rating {
+      display: inline-block;
+      font-size: 0; /* Remove whitespace between inline-block elements */
+    }
+
+    .star {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: gray;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    .star:hover,
+    .star.active {
+      background-color: gold;
+    }
+  </style>
+
+  <script>
+    const stars = document.querySelectorAll(".star");
+    let selectedRating = 0;
+
+    stars.forEach((star) => {
+      star.addEventListener("click", () => {
+        const rating = parseInt(star.getAttribute("data-rating"));
+        selectedRating = rating;
+
+        stars.forEach((s, index) => {
+          if (index < rating) {
+            s.classList.add("active");
+          } else {
+            s.classList.remove("active");
+          }
+        });
+      });
+    });
+  </script>
+</html>
